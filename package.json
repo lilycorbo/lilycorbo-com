@@ -7,7 +7,7 @@
     "build": "npm run clean && npm run css && npm run copy-build && npm run copy-serve",
     "copy-build": "rsync -r --exclude=*.css src/ docs/",
     "copy-serve": "cp -r docs/* /opt/homebrew/var/www/",
-    "clean": "rm -rf docs/* && rm -rf /opt/homebrew/var/www/*",
+    "clean": "rm -rf /opt/homebrew/var/www/*",
     "css": "npx tailwindcss -i ./src/input.css -o ./docs/output.css",
     "deploy": "npm run build && ",
     "watch": "npm-watch build",
