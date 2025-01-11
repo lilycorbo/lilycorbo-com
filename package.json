@@ -1,0 +1,31 @@
+{
+  "name": "lilycorbo-com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && npm run css && npm run copy-build && npm run copy-serve",
+    "copy-build": "rsync -r --exclude=*.css src/ docs/",
+    "copy-serve": "cp -r docs/* /opt/homebrew/var/www/",
+    "clean": "rm -rf docs/* && rm -rf /opt/homebrew/var/www/*",
+    "css": "npx tailwindcss -i ./src/input.css -o ./docs/output.css",
+    "deploy": "npm run build && ",
+    "watch": "npm-watch build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "html,css,js",
+      "quiet": false
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-watch": "^0.13.0",
+    "tailwindcss": "^3.4.17"
+  }
+}
