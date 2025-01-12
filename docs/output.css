@@ -617,13 +617,31 @@ video {
   --tw-gradient-to: #fce7f3 var(--tw-gradient-to-position);
 }
 
-h1 {
-  font-size: 3rem;
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.warning-banner {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.warning-banner::after, .warning-banner::before {
+  content: "⚠️";
 }
 
 @media (min-width: 768px) {
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 }
 

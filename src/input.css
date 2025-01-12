@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-h1 {
-  font-size: 3rem;
+.warning-banner {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.warning-banner::after, .warning-banner::before {
+  content: "⚠️";
 }
